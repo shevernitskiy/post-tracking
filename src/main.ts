@@ -1,5 +1,5 @@
 const tracking_parse_pattern =
-  /<ns3:historyRecord>.*?<ns3:OperationAddress>.*?<ns3:Index>(.*?)<\/ns3:Index>.*?<ns3:Description>(.*?)<\/ns3:Description>.*?<\/ns3:OperationAddress>.*?<ns3:OperType>.*?<ns3:Name>(.*?)<\/ns3:Name><\/ns3:OperType>.*?<ns3:OperDate>(.*?)<\/ns3:OperDate>.*?<\/ns3:historyRecord>/gm;
+  /<ns3:historyRecord>.*?<ns3:OperationAddress>.*?<ns3:Index>(.*?)<\/ns3:Index>.*?<ns3:Description>(.*?)<\/ns3:Description>.*?<\/ns3:OperationAddress>.*?<ns3:OperType>.*?<ns3:Name>(.*?)<\/ns3:Name><\/ns3:OperType><ns3:OperAttr>.*?<ns3:Name>(.*?)<\/ns3:Name><\/ns3:OperAttr><ns3:OperDate>(.*?)<\/ns3:OperDate>.*?<\/ns3:historyRecord>/gm;
 
 export type TrackingHistory = {
   /* Last operation in history */
@@ -12,8 +12,10 @@ export type TrackingHistory = {
     index: number;
     /* Desciption of the operation */
     place: string;
-    /* Desciption of the operation */
-    operation: string;
+    /* Operation type */
+    operation_type: string;
+    /* Operation description */
+    operation_desc: string;
     /* Datetime of the operation */
     datetime: Date;
   }[];
@@ -70,12 +72,13 @@ export class PostTracking {
         out.history.push({
           index: +match[1],
           place: match[2],
-          operation: match[3],
-          datetime: new Date(match[4]),
+          operation_type: match[3],
+          operation_desc: match[4],
+          datetime: new Date(match[5]),
         });
       }
 
-      out.last_operation = out.history.at(out.history.length - 1)?.operation ?? "";
+      out.last_operation = out.history.at(out.history.length - 1)?.operation_type ?? "";
       out.duration = ~~(Math.abs(Date.now() - (out.history.at(0)?.datetime.valueOf() ?? 0)) / 1000);
 
       return out;
