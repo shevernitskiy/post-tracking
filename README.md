@@ -1,5 +1,10 @@
 # 📦RussianPost tracking API client
 
+[![npm](https://img.shields.io/npm/v/@shevernitskiy/post-tracking?logo=npm&style=flat&labelColor=000)](https://www.npmjs.com/package/@shevernitskiy/post-tracking)
+[![JSR](https://jsr.io/badges/@shevernitskiy/post-tracking)](https://jsr.io/@shevernitskiy/post-tracking)
+![dependencies](https://img.shields.io/badge/dependencies-0-green?style=flat&labelColor=000)
+[![license](https://img.shields.io/github/license/shevernitskiy/amo?style=flat&labelColor=000)](https://github.com/shevernitskiy/post-tracking/blob/main/LICENSE)
+
 This is super simple API client for RussianPost Traking API.
 It just fetch the tracking history from the API.
 
