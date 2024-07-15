@@ -50,33 +50,31 @@ As as result you will get the history:
     {
       index: 111024,
       place: "Москва 24",
-      operation: "Обработка",
+      operation_type: "Прием",
+      operation_desc: "Единичный",
+      datetime: 2024-07-10T10:31:41.000Z
+    },
+    {
+      index: 111024,
+      place: "Москва 24",
+      operation_type: "Обработка",
+      operation_desc: "Покинуло место приёма",
       datetime: 2024-07-10T13:08:20.000Z
     },
     {
       index: 111974,
       place: "Москва МСП-3 Цех-4 МПКО-Восток",
-      operation: "Обработка",
+      operation_type: "Обработка",
+      operation_desc: "Прибыло в сортировочный центр",
       datetime: 2024-07-10T14:18:07.001Z
     },
     {
       index: 111974,
       place: "Москва МСП-3 Цех-4 МПКО-Восток",
-      operation: "Обработка",
+      operation_type: "Обработка",
+      operation_desc: "Сортировка",
       datetime: 2024-07-10T14:32:54.000Z
-    },
-    {
-      index: 108960,
-      place: "ЛЦ Внуково-2",
-      operation: "Обработка",
-      datetime: 2024-07-11T00:56:17.001Z
-    },
-    {
-      index: 104040,
-      place: "Шереметьево АОПП",
-      operation: "Обработка",
-      datetime: 2024-07-11T05:49:58.001Z
-    },
+    }
   ],
   last_operation: "Обработка",
   duration: 434992
