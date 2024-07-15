@@ -11,6 +11,8 @@
     "lineWidth": 100
   },
   "lint": {
-    "exclude": ["./npm/"]
+    "exclude": [
+      "./npm/"
+    ]
   }
 }
